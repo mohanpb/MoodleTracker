@@ -52,18 +52,18 @@ i=0
 for course in courses:
 	link = driver.find_element_by_link_text(course)
 	link.click()
-	ids = driver.find_elements_by_xpath('//*[@id]')
-	for ID in ids:
-		print ID.get_attribute('id') 
-	material_counters[i] = len(ids)
-	
-	print course + ' : ' + str(len(ids)) + ' : '
-	
-	if 
-	print course + 'Forum : ' + str(len(ids)) + ' : '
-	i+=1
+	links = driver.find_elements_by_partial_link_text('unread posts')
+	for link in links:
+		link.click()
+		posts = driver.find_element_by_class_name('unread')
+		all_children = post.find_elements_by_xpath(".//*")
+		l = all_children[0]
+		l.click()
+
+	time.sleep(10)
 	link = driver.find_element_by_link_text('My courses')
 	link.click()
+	time.sleep(5)
 
 
 ##### For testing purposes #####
